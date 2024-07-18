@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <time.h>
+
+
+
+int main()
+{
+    int iCurrentTime;
+    int iElapsedTime;
+    int i1;
+    int i2;
+    int i3;
+    int iAnswer1;
+    int iAnswer2;
+    int iAnswer3;
+    char cYesNo;
+
+    srand(time(NULL));
+
+    printf("Do you want to play the game press (y for yes AND n for no): ");
+    scanf("%c", &cYesNo);
+
+    if (cYesNo == 'Y' || cYesNo == 'y')
+    {
+        i1 = rand() % 100;
+        i2 = rand() % 100;
+        i3 = rand() % 100;
+
+        printf("Remember these numbers they will disappear soon\n");
+        printf("%d\t%d\t%d\n", i1,i2,i3);
+
+
+        iCurrentTime = time(NULL);
+        do {
+            iElapsedTime = time(NULL);
+        } while(iElapsedTime - iCurrentTime < 3);
+        system("clear");
+
+        printf("Now insert the numbers in order: \n");
+        scanf("%d%d%d", &iAnswer1,&iAnswer2,&iAnswer3);
+
+        if (i1 == iAnswer1 && i2 == iAnswer2 && i3 == iAnswer3)
+        {
+            printf("Congratulations you got the numbers\n");
+        } else {
+            printf("You lost the real number were:\n%d\t%d\t%d\n",i1,i2,i3);
+        }
+    }
+
+}
