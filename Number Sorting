@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+
+void sort(int arr[], int size, int ascending);
+
+int main() {
+    int arr[10];
+    int iTF;
+
+    for (int x=0; x < 10; x++ ) {
+        printf("Input number number %d: ", x+1);
+        scanf("%d", &arr[x]);
+    }
+
+    printf("choose what you want: \n");
+    printf("0\t ascending\n");
+    printf("1\t descending\n");
+    scanf("%d", &iTF);
+
+    sort(arr, 10,iTF);
+
+    for (int i =0; i < 10 ; i++) {
+        printf("%d\n", arr[i]);
+    }
+
+}
+
+
+void sort(int arr[], int size, int ascending) {
+    int temp;
+    for (int i = 0 ; i < size-1; i++) {
+        for (int j = i+1; j < size; j++) {
+                if ((ascending && arr[i] < arr[j]) || (!ascending && arr[i] > arr[j])) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+            }
+        }
+    }
+
+}
