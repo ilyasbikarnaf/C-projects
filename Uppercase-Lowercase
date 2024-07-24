@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+void toUpper(char *name);
+void toLower(char *name);
+
+int main() {
+    char cName1[] = "santaclaus";
+    char cName2[] = "THIS IS UPPERCASED";
+    printf("This is the first name before anything: %s\n",cName1);
+    printf("This is the second name before anything: %s\n\n",cName2);
+
+
+
+    toUpper(cName1);
+    toLower(cName2);
+
+    printf("\n\nNow everything is done\n");
+
+}
+
+void toUpper(char *name) {
+    for (int i = 0 ; i < strlen(name); i++) {
+        name[i] = toupper(name[i]);
+    }
+    printf("This this your name after being uppercased \"%s\"\n",name);
+}
+
+void toLower(char *name) {
+    for (int i = 0; i< strlen(name) ; i++) {
+        name[i] = tolower(name[i]);
+    }
+    printf("This is the given name after being lowercased \"%s\"\n", name);
+}
