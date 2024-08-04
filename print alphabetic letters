@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    char first = 'A';
+    for (int i =0; i < n; i++) {
+        //characters
+        for (int characters = 0; characters < n - i; characters++) {
+            cout << (char) (first + characters);
+        }
+        
+        //reversed characters
+        for (int characters = n-i-1; characters >=0; characters --) {
+            cout << (char) (first + characters);
+            
+        }
+        
+        
+        // newline
+        cout << endl;
+    }
+    
+    
+}
