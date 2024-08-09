@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+
+
+
+float absoluteValue(float x) {
+    if (x < 0)
+        return x*-1;
+    else
+        return x;
+}
+
+int GCD(int x, int y) {
+    int gcd = 0;
+    for (int i = 2; i<=x; i++){
+        if (x%i ==0 && y%i ==0)
+            gcd =i;
+    }
+    return gcd;
+}
+
+int main(void) {
+    printf("The gcd of 12 and 120 is: %d\n", GCD(12,120));
+    printf("The absolute value of -4 is %.2f and 5 is %.2f\n",absoluteValue(-4), absoluteValue(5));
+}
