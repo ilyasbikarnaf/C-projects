@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+// function prototypes
+int length(char string[]);
+void concatenation(char str1[],char str2[]);
+_Bool equalityOfString(char str1[],char str2[]);
+
+
+
+// main function
+int main(void){
+    char name[] = "Ilyas";
+    char rest[] = "Ilyas";
+
+    
+    printf("Is %s and %s equal, the answer is %d\n", name,rest,equalityOfString(name,rest));
+    
+}
+
+
+//function that compares two strings and returns 1 if they're equal and 0 if not.
+_Bool equalityOfString(char str1[],char str2[]) {
+    if (length(str1) != length(str2))
+        return 0;
+    
+    for (int i = 0;i < length(str1);i++){
+        if (str1[i] != str2[i])
+            return 0;
+    }
+    return 1;
+}
+
+
+
+
+
+// function that prints the concatenation of 2 strings (doesn't return)
+
+void concatenation(char str1[], char str2[]) {
+    char result[100];
+    for (int i=0; i<length(str1);i++){
+        result[i] = str1[i];
+    }
+    
+    int cnt = 0;
+    for (int j=length(result); j < length(result) + length(str2); j++) {
+        result[j] = str2[cnt];
+        cnt++;
+    }
+    
+    
+    
+    
+    printf("the result is %s \n", result);
+}
+
+
+
+
+// function that returns the length of string
+int length(char string[]) {
+    int count = 0;
+    while(string[count] != '\0')
+        count ++;
+    return count;
+}
