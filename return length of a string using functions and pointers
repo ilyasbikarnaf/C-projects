@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int length(const char *str) {
+    const char *ptrEnd = str;
+    while(*ptrEnd){
+        ptrEnd++;
+    }
+    return ptrEnd - str;
+}
+
+
+int main(void) {
+    char *name = "Hello world!";
+    printf("%p\n",&name);
+    printf("The length of the name \"%s\" is %d\n", name,length(name));
+}
