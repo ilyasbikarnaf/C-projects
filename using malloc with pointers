@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(void) {
+    char *name;
+    int length;
+    printf("what's the size of the string you want to enter: ");
+    scanf("%d", &length);
+    name = (char*)malloc((length+1)*sizeof(char));
+    if (name != NULL) {
+        printf("Now enter the name without spaces: ");
+        scanf("%s",name);
+        printf("Ok so your name is \"%s\"\n", name);
+        free (name);}
+    else {
+        printf("Invalid");
+    }
+    
+    
+}
