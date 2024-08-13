@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+
+struct item{
+    char *itemName;
+    int quantity;
+    float price;
+    float amount;
+};
+
+void readItem(struct item *ptr);
+void printItem(struct item *ptr);
+
+
+
+int main(void){
+    struct item new, *ptrNew;
+    ptrNew = &new;
+    
+    ptrNew->itemName = (char*)malloc(50*sizeof(char));
+    
+    if(!ptrNew->itemName)
+        return 1;
+    
+    readItem(&new);
+    printItem(&new);
+    
+    
+    
+    free(ptrNew->itemName);
+    
+}
+
+
+
+void readItem(struct item *ptr){
+    printf("The product name: ");
+    scanf("%s", ptr->itemName);
+    
+    
+    printf("The price: ");
+    scanf("%f",&ptr->price);
+    
+    
+    printf("The quantity: ");
+    scanf("%d",&ptr->quantity);
+    ptr->amount = ptr->quantity * ptr->price;
+}
+
+void printItem(struct item *ptr) {
+    printf("The item's name is %s, the quantity is %d, the price is %.2f and the amount is $%.2f\nc",ptr->itemName,ptr->quantity,ptr->price,ptr->amount);
+}
