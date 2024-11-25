@@ -5,7 +5,7 @@
 
 int main()
 {
-    int iCurrentTime;
+     int iCurrentTime;
     int iElapsedTime;
     int i1;
     int i2;
